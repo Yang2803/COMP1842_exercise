@@ -110,7 +110,7 @@
 </body>
 </html> -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -140,6 +140,46 @@
             let newPerimeter = calcRectanglePerimeter(newWidth, newHeight);
             document.getElementById("perimeterCalc").innerHTML = 
                 `The perimeter of the rectangle ${newWidth} by ${newHeight} is ${newPerimeter}`;
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Minute Calculator</title>
+</head>
+<body>
+
+    <label for="Hour">Enter hours:</label>
+    <input type="number" id="Hour" name="Hour"><br>
+
+    <label for="Minute">Enter minutes:</label>
+    <input type="number" id="Minute" name="Minute"><br>
+
+    <button onclick="doCalc()">Calculate total minutes</button>
+
+    <p id="minuteCalc"></p>
+
+    <script type="text/javascript">
+        function calcTotalMinutes(hour, minute){
+            return (hour * 60) + minute;
+        }
+
+        function doCalc(){
+            let hour = parseFloat(document.getElementById("Hour").value);
+            let minute = parseFloat(document.getElementById("Minute").value);
+            if (hour < 0 || minute < 0) {
+                document.getElementById("minuteCalc").innerHTML = "Please enter non-negative values.";
+                return;
+            }
+            let total = calcTotalMinutes(hour, minute);
+            document.getElementById("minuteCalc").innerHTML = 
+                `Total time is ${total} minutes`;
         }
     </script>
 </body>
