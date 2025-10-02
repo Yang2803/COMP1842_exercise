@@ -146,7 +146,7 @@
 </html> -->
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -180,6 +180,42 @@
             let total = calcTotalMinutes(hour, minute);
             document.getElementById("minuteCalc").innerHTML = 
                 `Total time is ${total} minutes`;
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Value Finder</title>
+</head>
+<body>
+
+    <label for="ValueA">Enter first value:</label>
+    <input type="number" id="ValueA" name="ValueA"><br>
+
+    <label for="ValueB">Enter second value:</label>
+    <input type="number" id="ValueB" name="ValueB"><br>
+
+    <button onclick="doCalc()">Find max value</button>
+
+    <p id="maxCalc"></p>
+
+    <script type="text/javascript">
+        function findMaxValue(a, b){
+            return Math.max(a, b);
+        }
+
+        function doCalc(){
+            let valueA = parseFloat(document.getElementById("ValueA").value);
+            let valueB = parseFloat(document.getElementById("ValueB").value);
+            let maxValue = findMaxValue(valueA, valueB);
+            document.getElementById("maxCalc").innerHTML = 
+                `The maximum value between ${valueA} and ${valueB} is ${maxValue}`;
         }
     </script>
 </body>
