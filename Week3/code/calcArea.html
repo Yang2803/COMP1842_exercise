@@ -71,7 +71,7 @@
 </body>
 </html> -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -108,5 +108,39 @@
         }
     </script>
 </body>
-</html>
+</html> -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Perimeter Calculator</title>
+</head>
+<body>
+
+    <label for="Height">Enter height:</label>
+    <input type="number" id="Height" name="Height"><br>
+
+    <label for="Width">Enter width:</label>
+    <input type="number" id="Width" name="Width"><br>
+
+    <button onclick="doCalc()">Calculate perimeter</button>
+
+    <p id="perimeterCalc"></p>
+
+    <script type="text/javascript">
+        function calcRectanglePerimeter(aWidth, aHeight){
+            return 2 * (aWidth + aHeight);
+        }
+
+        function doCalc(){
+            let newWidth = parseFloat(document.getElementById("Width").value);
+            let newHeight = parseFloat(document.getElementById("Height").value);
+            let newPerimeter = calcRectanglePerimeter(newWidth, newHeight);
+            document.getElementById("perimeterCalc").innerHTML = 
+                `The perimeter of the rectangle ${newWidth} by ${newHeight} is ${newPerimeter}`;
+        }
+    </script>
+</body>
+</html>
